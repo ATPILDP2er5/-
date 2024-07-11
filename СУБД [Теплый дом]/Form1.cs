@@ -27,14 +27,17 @@ namespace СУБД__Теплый_дом_
                 if(true)
                 {
                     label2.Text = "Подключение...";
-                    Size = new System.Drawing.Size(0,0);
-                    Hide();
+                    DialogResult = DialogResult.OK;
+                    Close();
                 }
                 
             }
             else
             {
                 MessageBox.Show("Этот компьютер не подключен к интернету! Проверте подключение!","",MessageBoxButtons.OK, MessageBoxIcon.Error);
+                
+                DialogResult = DialogResult.No;
+                Close();
             }
         }
         public static bool CheckForInternetConnection()

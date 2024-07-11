@@ -22,7 +22,16 @@ namespace СУБД__Теплый_дом_
             
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Form1 form = new Form1();
+            form.Show();
+            if (form.DialogResult == DialogResult.OK)
+            {
+                Avtorisate avtorisate = new Avtorisate();
+                avtorisate.Icon = form.Icon;
+                avtorisate.Font = form.Font;
+                avtorisate.BackColor = form.BackColor;
+                Application.Run(avtorisate);
+            }
         }
     }
 }
